@@ -15,10 +15,10 @@ public class Game {
     
     boolean started;
     ArrayList<Player> players;
-    int round;
+    Round round;
     ArrayList<Card> deck = new ArrayList<Card>();
 
-    public int getRound() {
+    public Round getRound() {
         return round;
     }
 
@@ -30,9 +30,10 @@ public class Game {
                 this.deck.add(new Card(Suit.values()[i], j));                
             }
         }
+        this.round = new Round(0,0);
     }
 
-    public void setRound(int round) {
+    public void setRound(Round round) {
         this.round = round;
     }
 
@@ -58,7 +59,7 @@ public class Game {
     }
     
     public void increaseRound(){
-        this.round++;
+        this.round.increaseId();
         Random randomGenerator = new Random();
         
         for (int i = 0; i < this.players.size(); i++){

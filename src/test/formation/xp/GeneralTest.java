@@ -11,20 +11,27 @@ public class GeneralTest extends TestCase {
 	@Test
 	public void test() {
             
-            Player p1 = new Player("Joe", 0);
+            Player p1 = new Player("Joe", 50);
             Player p2 = new Player("Doe", 100);
+            
+            
             
             ArrayList<Player> players = new ArrayList<Player>();
             players.add(p1);
             players.add(p2);
             
             Game game = new Game(true,players);
+            int sum = p1.getMoney()+p2.getMoney()+game.getRound().getMoney();
             
             game.increaseRound();
             
             assertTrue(game.isStarted());
             assertEquals(2, game.getPlayers().get(0).getCards().size());
             assertFalse(game.getDeck().contains(game.getPlayers().get(0).getCards().get(0)));
+            
+            game.getRound().bet(game.getPlayers().get(0),25); // Player one bets 25 coins
+            
+            assertEquals(sum, game.getPlayers().get(0).getMoney()+game.getPlayers().get(1).getMoney() + game.getRound().getMoney()); // we check if the amount of money at the begining is still the same when he bets
             
             
             

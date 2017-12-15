@@ -48,4 +48,12 @@ public class Player {
         this.cards.add(card);
     }
     
+    public void increaseMoney(int q){
+        this.money+=q;
+    }
+    
+    public void decreaseMoney(int q){
+        this.money-=q;
+    }
+    
 }
