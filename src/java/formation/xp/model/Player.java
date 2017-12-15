@@ -88,6 +88,7 @@ public class Player {
     
     public void check(){
         System.out.println("Le joueur a passé");
+        System.out.println("La mise est de "+this.getBetMoney());
     }
     
     public void showMyBetMoney(){
