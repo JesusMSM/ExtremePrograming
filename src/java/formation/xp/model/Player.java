@@ -77,4 +77,8 @@ public class Player {
         this.money-=q;
         this.betMoney+=q;
     }
+    
+    public void allin(){
+        bet(this.money);
+    }
 }
