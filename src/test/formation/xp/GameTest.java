@@ -28,6 +28,10 @@ public class GameTest extends TestCase{
             game.follow(game.getPlayers().get(1));
             
             assertEquals(game.getPlayers().get(0).getBetMoney(), game.getPlayers().get(1).getBetMoney());
+            
+            game.increaseRound();
+            
+            p1.showMyCards();
         
         }
     

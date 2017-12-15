@@ -89,4 +89,15 @@ public class Player {
     public void check(){
         System.out.println("Le joueur a passé");
     }
+    
+    public void showMyBetMoney(){
+        System.out.print(this.getBetMoney());
+    }
+    
+    public void showMyCards(){
+        for (int i=0; i<this.cards.size(); i++){
+            System.out.print (this.cards.get(i).getNumber() + " " + this.cards.get(i).getSuit().toString() + " ");
+        }
+        System.out.println();
+    }
 }
