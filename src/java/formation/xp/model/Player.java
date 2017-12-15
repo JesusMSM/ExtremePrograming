@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Player {
     String name;
-    ArrayList<Card> cards;
+    ArrayList<Card> cards = new ArrayList<Card>();
 
     public Player(String name, int money) {
         this.name = name;
@@ -44,5 +44,8 @@ public class Player {
         this.name = name;
     }
     
+    public void addCard(Card card){
+        this.cards.add(card);
+    }
     
 }

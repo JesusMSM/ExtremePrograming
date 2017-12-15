@@ -20,9 +20,13 @@ public class GeneralTest extends TestCase {
             
             Game game = new Game(true,players);
             
-            System.out.println(game.isStarted());
-            System.out.println(game.getPlayers().toString());
-            System.out.println(game.getPlayers().get(0).getName());
+            game.increaseRound();
+            
+            assertTrue(game.isStarted());
+            assertEquals(2, game.getPlayers().get(0).getCards().size());
+            assertFalse(game.getDeck().contains(game.getPlayers().get(0).getCards().get(0)));
+            
+            
             
 	}
 }
