@@ -13,13 +13,22 @@ import java.util.ArrayList;
 public class Player {
     String name;
     ArrayList<Card> cards = new ArrayList<Card>();
+    int betMoney;
+    int money;
 
+    public int getBetMoney() {
+        return betMoney;
+    }
+
+    public void setBetMoney(int betMoney) {
+        this.betMoney = betMoney;
+    }
+    
     public Player(String name, int money) {
         this.name = name;
         this.money = money;
     }
-    int money;
-
+ 
     public ArrayList<Card> getCards() {
         return cards;
     }
@@ -56,4 +65,16 @@ public class Player {
         this.money-=q;
     }
     
+    public void increaseBetMoney(int q){
+        this.betMoney+=q;
+    }
+    
+    public void decreaseBetMoney(int q){
+        this.betMoney-=q;
+    }
+    
+    public void bet(int q){
+        this.money-=q;
+        this.betMoney+=q;
+    }
 }

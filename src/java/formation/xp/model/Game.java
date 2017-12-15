@@ -15,10 +15,10 @@ public class Game {
     
     boolean started;
     ArrayList<Player> players;
-    Round round;
+    int round;
     ArrayList<Card> deck = new ArrayList<Card>();
 
-    public Round getRound() {
+    public int getRound() {
         return round;
     }
 
@@ -30,10 +30,9 @@ public class Game {
                 this.deck.add(new Card(Suit.values()[i], j));                
             }
         }
-        this.round = new Round(0,0);
     }
 
-    public void setRound(Round round) {
+    public void setRound(int round) {
         this.round = round;
     }
 
@@ -59,7 +58,7 @@ public class Game {
     }
     
     public void increaseRound(){
-        this.round.increaseId();
+        this.round++;
         Random randomGenerator = new Random();
         
         for (int i = 0; i < this.players.size(); i++){
@@ -70,8 +69,20 @@ public class Game {
             randomInt = randomGenerator.nextInt(this.deck.size());
             this.players.get(i).addCard(this.deck.get(randomInt));
             this.deck.remove(randomInt);
-        }
+        }    
+    }
+    
+    public void follow(Player p){
+        int moneyToBet;
+        int maxValue = -99;
         
+        for (int i=0; i<this.players.size(); i++){
+            if (this.players.get(i).getBetMoney()>maxValue)
+                maxValue=this.players.get(i).getBetMoney();
+        }
+        moneyToBet = maxValue - p.getBetMoney();
+        
+        p.bet(moneyToBet);
     }
     
     
