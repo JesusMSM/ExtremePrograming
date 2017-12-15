@@ -8,5 +8,6 @@ public class GeneralTest extends TestCase {
 	@Test
 	public void test() {
 		// TODO
+            // SALUT
 	}
 }
