@@ -15,6 +15,15 @@ public class Game {
     public Game(boolean started) {
         this.started = started;
     }
+
+    public boolean isStarted() {
+        return started;
+    }
+
+    public void setStarted(boolean started) {
+        this.started = started;
+    }
+    
     
     
 }
