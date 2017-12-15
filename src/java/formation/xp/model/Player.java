@@ -81,4 +81,8 @@ public class Player {
     public void allin(){
         bet(this.money);
     }
+    
+    public void raise(int q){
+        bet(q);
+    }
 }

@@ -37,6 +37,11 @@ public class PlayerTest extends TestCase {
             p1.allin();
             assertEquals(p1.getMoney(), 0);
             
+            p1.setMoney(100);
+            
+            p1.raise(50);
+            assertEquals(p1.getMoney(), 50);
+            
         
         }
     
