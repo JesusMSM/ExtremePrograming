@@ -85,4 +85,8 @@ public class Player {
     public void raise(int q){
         bet(q);
     }
+    
+    public void check(){
+        System.out.println("Le joueur a passé");
+    }
 }

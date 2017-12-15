@@ -42,6 +42,8 @@ public class PlayerTest extends TestCase {
             p1.raise(50);
             assertEquals(p1.getMoney(), 50);
             
+            p1.check();
+            assertEquals(p1.getMoney(), 50);
         
         }
     
